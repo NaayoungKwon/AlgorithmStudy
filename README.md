@@ -10,10 +10,10 @@
 
 ## Graph
 + BOJ 11404
-+ BOJ 1956
++ BOJ 1956 🤔
 
 ## Fibo
 + BOJ 2749
 
-## Find Ruls
-+ BOJ 1019
+## Find Rules
++ BOJ 1019 🤔
