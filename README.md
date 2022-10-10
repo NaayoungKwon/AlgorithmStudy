@@ -11,6 +11,7 @@
 ## Graph
 + BOJ 11404
 + BOJ 1956 🤔
++ BOJ 1976
 
 ## Fibo
 + BOJ 2749
