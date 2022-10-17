@@ -19,3 +19,6 @@
 
 ## Find Rules
 + BOJ 1019 🤔
+
+## Sort
++ BOJ 1766
