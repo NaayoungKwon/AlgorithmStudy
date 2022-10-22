@@ -13,6 +13,7 @@
 + BOJ 1956 🤔
 + BOJ 1976
 + BOJ 10775 🤔
++ [BOJ 1197 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/1197.%E2%80%85%EC%B5%9C%EC%86%8C%E2%80%85%EC%8A%A4%ED%8C%A8%EB%8B%9D%E2%80%85%ED%8A%B8%EB%A6%AC)
 
 ## Fibo
 + BOJ 2749
