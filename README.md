@@ -35,3 +35,6 @@
 
 ## String
 + [BOJ 20437](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/20437.%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4%E2%80%85%EA%B2%8C%EC%9E%84%E2%80%852)
+
+## Greedy
++ [BOJ 2285](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2285.%E2%80%85%EC%9A%B0%EC%B2%B4%EA%B5%AD)
