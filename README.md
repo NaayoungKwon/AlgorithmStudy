@@ -39,3 +39,4 @@
 
 ## Greedy
 + [BOJ 2285](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2285.%E2%80%85%EC%9A%B0%EC%B2%B4%EA%B5%AD)
++ [BOJ 13164](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/13164.%E2%80%85%ED%96%89%EB%B3%B5%E2%80%85%EC%9C%A0%EC%B9%98%EC%9B%90)
