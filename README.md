@@ -44,4 +44,8 @@
 + [BOJ 21758 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/21758.%E2%80%85%EA%BF%80%E2%80%85%EB%94%B0%EA%B8%B0)
 
 ## Bitmask
-+ [BOJ_1740](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1740.%E2%80%85%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1)
++ [BOJ 1740](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1740.%E2%80%85%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1)
+
+## 구현
++ [BOJ 5212](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/5212.%E2%80%85%EC%A7%80%EA%B5%AC%E2%80%85%EC%98%A8%EB%82%9C%ED%99%94)
+
