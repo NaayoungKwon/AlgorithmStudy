@@ -48,4 +48,5 @@
 
 ## 구현
 + [BOJ 5212](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/5212.%E2%80%85%EC%A7%80%EA%B5%AC%E2%80%85%EC%98%A8%EB%82%9C%ED%99%94)
++ [BOJ 1713](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1713.%E2%80%85%ED%9B%84%EB%B3%B4%E2%80%85%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0)
 
