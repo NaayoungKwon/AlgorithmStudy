@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 115516 KB, 시간: 144 ms
+메모리: 114328 KB, 시간: 120 ms
 
 ### 분류
 
@@ -33,11 +33,11 @@
 	<li>하루의 폭은 1이다. </li>
 </ul>
 
-<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/1a820e79-e5fc-4e4a-b7ad-efe42cfd7cdd/" style="width: 720px; height: 225px;" dmgli65vj=""></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/1a820e79-e5fc-4e4a-b7ad-efe42cfd7cdd/" style="width: 720px; height: 225px;" em4qqhi0x=""></p>
 
 <p>위의 그림에서와 같이 일정이 주어졌다고 하자. 여기서 코팅지의 면적은 아래의 파란색 영역과 같다.</p>
 
-<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/680c1b8a-7ae1-4b00-ba41-e1c61cd64846/" style="width: 720px; height: 224px;" dmgli65vj=""></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/680c1b8a-7ae1-4b00-ba41-e1c61cd64846/" style="width: 720px; height: 224px;" em4qqhi0x=""></p>
 
 <p>이때 코팅지의 크기의 합은 3 x 8 + 2 x 2 = 28이다. </p>
 
