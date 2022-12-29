@@ -62,6 +62,7 @@
 
 ## 다익스트라
 + [BOJ 22865 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/22865.%E2%80%85%EA%B0%80%EC%9E%A5%E2%80%85%EB%A8%BC%E2%80%85%EA%B3%B3)
++ [BOJ 18223](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/18223.%E2%80%85%EB%AF%BC%EC%A4%80%EC%9D%B4%EC%99%80%E2%80%85%EB%A7%88%EC%82%B0%E2%80%85%EA%B7%B8%EB%A6%AC%EA%B3%A0%E2%80%85%EA%B1%B4%EC%9A%B0)
 
 ## DFS
 + [BOJ 1926](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1926.%E2%80%85%EA%B7%B8%EB%A6%BC)
