@@ -34,6 +34,7 @@
 + [BOJ 15486 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/15486.%E2%80%85%ED%87%B4%EC%82%AC%E2%80%852)
 + [BOJ 14863 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/14863.%E2%80%85%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%E2%80%85%EA%B2%BD%EC%82%B0%EA%B9%8C%EC%A7%80)
 + [BOJ 11909 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/11909.%E2%80%85%EB%B0%B0%EC%97%B4%E2%80%85%ED%83%88%EC%B6%9C)
++ [BOJ 27210 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/27210.%E2%80%85%EC%8B%A0%EC%9D%84%E2%80%85%EB%AA%A8%EC%8B%9C%EB%8A%94%E2%80%85%EC%82%AC%EB%8B%B9)
 
 ## Tree
 + [BOJ 11505 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/11505.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%EA%B3%B1%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0)
