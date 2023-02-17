@@ -91,3 +91,6 @@
 
 ## DFS
 + [BOJ 1926](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1926.%E2%80%85%EA%B7%B8%EB%A6%BC)
+
+## BFS
++ [BOJ 16973](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/16973.%E2%80%85%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%E2%80%85%ED%83%88%EC%B6%9C)
