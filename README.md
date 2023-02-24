@@ -95,3 +95,6 @@
 
 ## BFS
 + [BOJ 16973](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/16973.%E2%80%85%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%E2%80%85%ED%83%88%EC%B6%9C)
+
+## 투포인터
++ [BOJ 20922](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/20922.%E2%80%85%EA%B2%B9%EC%B9%98%EB%8A%94%E2%80%85%EA%B1%B4%E2%80%85%EC%8B%AB%EC%96%B4)
