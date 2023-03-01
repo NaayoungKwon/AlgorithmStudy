@@ -8,13 +8,14 @@ def decode_idx(r,c,a):
     return (a//(c+1), a % (c+1));
 
 def find(path, a):
-    if path[a] == a:
-        return a;
-    return find(path, path[a]);
+    if path[a] != a:
+        path[a] = find(path, path[a]);
+    return path[a];
 
 def solution(r,c, load):
 
     result = 0;
+    cnt = 0;
     parent = [0] * (r+1)*(c+1);
     for i in range(len(parent)):
         parent[i] = i;
@@ -34,6 +35,9 @@ def solution(r,c, load):
         else:
             continue;
         result += l;
+        cnt += 1;
+        if cnt == r*c -1:
+            break;
         for e, l in load[end]:
             heapq.heappush(arr, (l, end,e));
         
