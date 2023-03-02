@@ -16,7 +16,7 @@ def solution(r,c, load):
 
     result = 0;
     cnt = 0;
-    parent = [0] * (r+1)*(c+1);
+    parent = [0] * (2501);
     for i in range(len(parent)):
         parent[i] = i;
     
@@ -35,6 +35,7 @@ def solution(r,c, load):
         else:
             continue;
         result += l;
+        # print(start, end,l)
         cnt += 1;
         if cnt == r*c -1:
             break;
