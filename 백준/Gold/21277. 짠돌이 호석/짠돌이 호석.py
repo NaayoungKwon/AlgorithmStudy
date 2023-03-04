@@ -9,10 +9,6 @@ def rotate(puz):
             new_puz[j][n-1-i] = puz[i][j];
     return new_puz;
 
-def next(n,m,i,j):
-    if j+1 == m:
-        return (i+1,0);
-    return (i, j+1);
 def solution(n1, m1, n2, m2, puz1, puz2):
 
     result = (min(n1,m1)*min(n2,m2))*(max(n1,m1)*max(n2,m2));
@@ -34,8 +30,10 @@ def solution(n1, m1, n2, m2, puz1, puz2):
                 for uj in range(m):
                     if ti >= n1 or tj >= m1:
                         tj += 1;
+                        # print(ti,tj,k,ui,uj,n,m,'over')
                         continue;
                     elif int(puz[ui][uj]) + int(puz1[ti][tj]) <= 1:
+                        # print(ti,tj,k,ui,uj,n,m,'in')
                         tj += 1;
                     else:
                         flag = False;
@@ -43,10 +41,12 @@ def solution(n1, m1, n2, m2, puz1, puz2):
                 if flag == False:
                     break;
                 ti += 1;
-                max_j = max(max_j, tj,m1);
-                max_i = max(max_i,ti,n1);
+                max_j = max(max_j, tj,m1,m2);
+                max_i = max(max_i,ti,n1,n2);
+                # print(max_i,max_j)
                 tj = j;
             if flag:
+                # print(ti,tj,k,max_i,max_j,'cal')
                 result = min(result, max_i*max_j);
         
         if j+1 == m:
