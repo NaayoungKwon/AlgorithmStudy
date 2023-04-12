@@ -1,11 +1,11 @@
 from collections import defaultdict
 
 def make_puz(pan,si,sj,ei,ej,ci,cj,size,target):
-    
+
     n = len(pan)
     m = len(pan[0])
     plus = 0
-    
+
     for x,y in [[1,0],[0,1], [-1,0],[0,-1]]:
         i = ci + x
         j = cj + y
@@ -17,7 +17,7 @@ def make_puz(pan,si,sj,ei,ej,ci,cj,size,target):
             ej = max(ej , c,e)
             si = min(si, b,d)
             sj = min(sj , c,e)
-    
+
     return (size+plus, si,sj,ei, ej);
 
 def check_puz(game_board,game_puz, table, puz):
@@ -26,8 +26,8 @@ def check_puz(game_board,game_puz, table, puz):
     a = puz[2] - puz[0] + 1
     b = puz[3] - puz[1] + 1
     # print(n,m,a,b)
-    
-    
+
+
     flag = [True] * 4
     for x in range(n):
         if True not in flag:
@@ -65,7 +65,7 @@ def check_puz(game_board,game_puz, table, puz):
     # print(flag, game_puz, puz)
     if True in flag:
         return True
-        
+
     return False
 
 def solution(game_board, table):
@@ -73,7 +73,7 @@ def solution(game_board, table):
     # 1. dictionary에 key = 크기, value는 모양 배열얼 넣는 table 요소들을 넣는다
     # 2. 보드를 하나씩 순회하다가 0을 만나면 dfs로 모양을 만든다. 
     # 3. 만든 모양의 크기의 key를 가진 배열들을 비교해본다
-    
+
     dic = defaultdict(list)
     for i in range(len(table)):
         for j in range(len(table[0])):
@@ -81,7 +81,7 @@ def solution(game_board, table):
                 table[i][j] = 2
                 size, si,sj,ei, ej = make_puz(table, i,j,i,j,i,j,1,1)
                 dic[size].append((si,sj,ei,ej))
-                
+
     for i in range(len(game_board)):
         for j in range(len(game_board[0])):
             if game_board[i][j] == 0:
