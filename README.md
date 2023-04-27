@@ -104,6 +104,7 @@
 + [BOJ 14719](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/14719.%E2%80%85%EB%B9%97%EB%AC%BC)
 + [BOJ 1038 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/1038.%E2%80%85%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94%E2%80%85%EC%88%98)
 + [BOJ 20665](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/20665.%E2%80%85%EB%8F%85%EC%84%9C%EC%8B%A4%E2%80%85%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0)
++ [BOJ 1522 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1522.%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4%E2%80%85%EA%B5%90%ED%99%98)
 
 ## 다익스트라
 + [BOJ 22865 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/22865.%E2%80%85%EA%B0%80%EC%9E%A5%E2%80%85%EB%A8%BC%E2%80%85%EA%B3%B3)
