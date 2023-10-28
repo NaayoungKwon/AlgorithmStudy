@@ -23,4 +23,4 @@ def solution(n,m,trees,s,e):
 
 n,m = map(int,sys.stdin.readline().split());
 myList = list(map(int,sys.stdin.readline().split())) ;
-print(solution(n, m,myList,0,sum(myList)));
+print(solution(n, m,myList,0,max(myList)));
