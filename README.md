@@ -71,6 +71,7 @@
 + [BOJ 9342](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/9342.%E2%80%85%EC%97%BC%EC%83%89%EC%B2%B4)
 + [BOJ 17413](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/17413.%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0%E2%80%852)
 + [BOJ 22859 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/22859.%E2%80%85HTML%E2%80%85%ED%8C%8C%EC%8B%B1)
++ [BOJ 20210](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/20210.%E2%80%85%ED%8C%8C%EC%9D%BC%E2%80%85%ED%83%90%EC%83%89%EA%B8%B0)
 
 ## Greedy
 + [BOJ 2285](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2285.%E2%80%85%EC%9A%B0%EC%B2%B4%EA%B5%AD)
