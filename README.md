@@ -27,6 +27,7 @@
 ### 위상 정렬
 
 + [BOJ 2637](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2637.%E2%80%85%EC%9E%A5%EB%82%9C%EA%B0%90%E2%80%85%EC%A1%B0%EB%A6%BD)
++ [BOJ 9466](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/9466.%E2%80%85%ED%85%80%E2%80%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
 
 ## Fibo
 + BOJ 2749
