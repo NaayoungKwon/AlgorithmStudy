@@ -54,6 +54,7 @@
 + [BOJ 2565 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/commit/365d7abcce75c50b2093e7478e3cf00fdd4ecff2)
 + [BOJ 2096](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2096.%E2%80%85%EB%82%B4%EB%A0%A4%EA%B0%80%EA%B8%B0)
 + [BOJ 17404 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/17404.%E2%80%85RGB%EA%B1%B0%EB%A6%AC%E2%80%852)
++ [BOJ 2225 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/2225.%E2%80%85%ED%95%A9%EB%B6%84%ED%95%B4)
 
 ### LIS 
 + [BOJ 12015 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/12015.%E2%80%85%EA%B0%80%EC%9E%A5%E2%80%85%EA%B8%B4%E2%80%85%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4%E2%80%852)
