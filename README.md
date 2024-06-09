@@ -20,6 +20,7 @@
 + [BOJ 21924 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/21924.%E2%80%85%EB%8F%84%EC%8B%9C%E2%80%85%EA%B1%B4%EC%84%A4)
 + [BOJ 12896 🤔 -1167유사 ](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/12896.%E2%80%85%EC%8A%A4%ED%81%AC%EB%A3%A8%EC%A7%80%E2%80%85%EB%AF%BC%ED%98%B8)
 + [BOJ 18769](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/18769.%E2%80%85%EA%B7%B8%EB%A6%AC%EB%93%9C%E2%80%85%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
++ [BOJ 17182 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/17182.%E2%80%85%EC%9A%B0%EC%A3%BC%E2%80%85%ED%83%90%EC%82%AC%EC%84%A0)
 
 
 ### Union Find
