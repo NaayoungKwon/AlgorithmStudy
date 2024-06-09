@@ -21,9 +21,10 @@ def find_m(cur, cnt, l, n, pan):
 def solution(n, k, pan):
     visited[k] = True
 
-    for x in range(n):
-        for i in range(n):
-            for j in range(n):
+    
+    for i in range(n):
+        for j in range(n):
+            for x in range(n):
                 pan[i][j] = min(pan[i][j], pan[i][x] + pan[x][j])
     
     find_m(k,1,0,n,pan)
