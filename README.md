@@ -144,5 +144,8 @@
 
 ## 이분 탐색
 + BOJ 1561 🤔
+
+## 누적합
++ [BOJ 20440 🤔](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Gold/20440.%E2%80%85%F0%9F%8E%B5%EB%8B%88%EA%B0%80%E2%80%85%EC%8B%AB%EC%96%B4%E2%80%85%EC%8B%AB%EC%96%B4%E2%80%85%EB%84%88%EB%AC%B4%E2%80%85%EC%8B%AB%EC%96%B4%E2%80%85%EC%8B%AB%EC%96%B4%E2%80%85%EC%98%A4%EC%A7%80%E2%80%85%EB%A7%88%E2%80%85%EB%82%B4%EA%B2%8C%E2%80%85%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88%F0%9F%8E%B5%E2%80%85%EF%BC%8D%E2%80%851)
 + [BOJ 1654](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/1654.%E2%80%85%EB%9E%9C%EC%84%A0%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0)
 + [BOJ 2805](https://github.com/NaayoungKwon/AlgorithmStudy/tree/main/%EB%B0%B1%EC%A4%80/Silver/2805.%E2%80%85%EB%82%98%EB%AC%B4%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0)
