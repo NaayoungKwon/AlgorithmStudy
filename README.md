@@ -1,9 +1,9 @@
 # 📚 Algorithm Test 공부를 위한 문제들 
 
-<img align='right' src="http://mazassumnida.wtf/api/v2/generate_badge?boj=kny8092">
-
-
-
+<p align="center">
+  <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=kny8092" alt="BOJ Stats" style="display: inline-block; margin-right: 10px;" />
+  <img src="https://leetcard.jacoblin.cool/kny8092?theme=light&font=Niramit" alt="LeetCode Stats" style="display: inline-block;" />
+</p>
 
 
 ## Graph
