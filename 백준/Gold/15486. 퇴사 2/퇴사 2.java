@@ -1,58 +1,57 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 
   private static BufferedReader br;
-  private static StringBuilder sb = new StringBuilder();
-  static StringBuilder S;
-  static StringBuilder T;
+
+
 
   public static void main(String[] args) throws IOException {
     br = new BufferedReader(new InputStreamReader(System.in));
 
-    int n = Integer.parseInt(br.readLine());
-    List<Integer> t = new ArrayList<>(n);
-    List<Integer> p = new ArrayList<>(n);
-
-    for(int i = 0 ; i < n ; i ++){
-      String[] line = br.readLine().split(" ");
-      t.add(Integer.parseInt(line[0]));
-      p.add(Integer.parseInt(line[1]));
-    }
-
-    System.out.println(solution(n, t, p));
-  }
-
-
-  public static int solution(int n , List<Integer> t, List<Integer> p) {
-    List<Integer> dp = new ArrayList<>(n+1);
-    for(int i = 0 ; i <= n ; i++){
-      dp.add(0);
-    }
-
-    int maxHistory = 0;
-    for(int i = 0 ; i < n ; i++){
-      maxHistory = Math.max(maxHistory, dp.get(i));
-      int day = i + t.get(i);
-      if(day <= n && maxHistory + p.get(i) > dp.get(day)){
-        dp.set(day, maxHistory + p.get(i));
+    String[] line = br.readLine().split(" ");
+    int n = Integer.parseInt(line[0]);
+//    int m = Integer.parseInt(line[1]);
+    int[][] pan = new int[n][2];
+//    int[] arr = new int[n];
+    for (int i = 0; i < n; i++) {
+      String[] split = br.readLine().split(" ");
+      for (int j = 0; j < 2; j++) {
+        pan[i][j] = Integer.parseInt(split[j]);
+//        arr[j] = Integer.parseInt(split[j]);
+//      }
       }
     }
-
-    return dp.stream().max(Integer::compareTo).orElse(0);
+    System.out.println(solution(n, pan));
   }
+
+
+  public static int solution(int n , int[][] arr) {
+    int result = 0;
+    int[] dp = new int[n+1];
+
+    if(arr[0][0] <= n ){
+      dp[arr[0][0]] = arr[0][1];
+    }
+
+    for(int i = 1 ; i < n ; i ++){
+      int day = i + arr[i][0];
+      dp[i+1] = Math.max(dp[i], dp[i+1]);
+      if(day > n){
+        continue;
+      }
+      dp[day] = Math.max(dp[day], dp[i] + arr[i][1]);
+    }
+    for(int i = 0 ; i <= n ; i++){
+      result = Math.max(result, dp[i]);
+    }
+
+    return result;
+  }
+
+
+
 }
