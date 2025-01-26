@@ -103,7 +103,7 @@ public class Main {
           result[0] = x;
           result[1] = y;
         } else if(result[0] == x){
-          result[1] = Math.max(result[1], y);
+          result[1] = Math.min(result[1], y);
         }
       }
       return;
