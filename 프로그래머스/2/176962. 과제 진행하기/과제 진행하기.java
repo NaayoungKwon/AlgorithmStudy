@@ -1,102 +1,95 @@
+import java.time.LocalTime;
 import java.util.*;
 
 class Solution {
     public String[] solution(String[][] plans) {
         String[] answer = new String[plans.length];
-        // 멈춘 과제는 스택에
-        Arrays.sort(plans, (String[] p1, String[] p2) -> {
-            String[] p1s = p1[1].split(":");
-            String[] p2s = p2[1].split(":");
-            if(Integer.parseInt(p1s[0]) < Integer.parseInt(p2s[0])){
-                return -1;
-            } else if (Integer.parseInt(p1s[0]) > Integer.parseInt(p2s[0])){
-                return 1;
-            } else if (Integer.parseInt(p1s[1]) < Integer.parseInt(p2s[1])){
-                return -1;
-            }
-            return 1;
-        });
-        
-        Stack<Plan> lefts = new Stack<>();
-        Plan before = new Plan(plans[0]);
-        int k = 0;
-        for(int i = 1 ; i < plans.length ; i++){
-            Plan newPlan = new Plan(plans[i]);
-            // System.out.println(newPlan.name);
-            int[] end = before.endTime();
-            // System.out.println("end " + end[0] + " " + end[1]);
-            // end가 newPlan보다 앞이면 result에 before 넣고 + stack에 있는거 처리 반복 + new를 before로 업뎃
-            if(end[0] < newPlan.hh || (end[0] == newPlan.hh && end[1] <= newPlan.mm)){
-                answer[k] = before.name;
-                k += 1;
-                int leftMin = (newPlan.hh - end[0] ) * 60 + (newPlan.mm - end[1]);
-                while(lefts.size() > 0 && leftMin > 0){
-                    Plan leftPlan = lefts.pop();
-                    int leftPlanTime = leftMin - leftPlan.left;
-                    // System.out.println("left " + leftMin);
-                    if(leftMin >= leftPlan.left){
-                        answer[k] = leftPlan.name;
-                        k += 1;
-                        leftMin -= leftPlan.left;
-                        // System.out.println("add result to " + leftPlan.name);
-                    } else {
-                        leftPlan.updateLeft(leftPlan.left - leftMin);
-                        leftMin = 0;
-                        lefts.add(new Plan(leftPlan));
-                        // System.out.println("remian " + leftPlan.name);
-                    }
+
+        PriorityQueue<Homework> pq = new PriorityQueue<>(Homework::compareTo);
+        for(String[] plan : plans){
+            pq.add(new Homework(plan));
+        }
+
+        int cnt = 0;
+        LocalTime now = pq.peek().start;
+        Stack<Homework> left = new Stack<>();
+        while(!pq.isEmpty()){
+            Homework hw = pq.poll();
+
+            // 만약 지금 시간이 숙제 시작시간이 되지 않았다면, 이전에 못한 숙제를 한다.
+            // 숙제시작시간 - 지금시간 >= 남은숙제left : answer에 남은숙제과목 추가
+            // 숙제시작시간 - 지금시간 < 남은숙제left : 남은숙제를 지금까지 얼마나했나 업데이트해서 스택에 다시 넣음
+            while(!left.isEmpty() && now.isBefore(hw.start)){
+                Homework leftHw = left.pop();
+                LocalTime leftTime = hw.start.minusHours(now.getHour()).minusMinutes(now.getMinute());
+                int studyTime = leftTime.getHour() * 60 + leftTime.getMinute();
+                int realStudyTime = studyTime >= leftHw.left ? leftHw.left : studyTime;
+                leftHw.did(realStudyTime);
+                if(leftHw.isDone()){
+                    answer[cnt] = leftHw.course;
+                    cnt++;
+                    
+                } else {
+                    left.add(leftHw);
+                    // now = now.plusMinutes(studyTime);
                 }
-                before = newPlan;
-                // System.out.println("add result");
-            } else { // end가 newPlan보다 뒤면 stack에 before넣고 + new를 before로 업뎃
-                int leftMin = (newPlan.hh - end[0] ) * 60 + (newPlan.mm - end[1]);
-                before.updateLeft(-leftMin);
-                // System.out.println("add st left " +leftMin );
-                lefts.add(new Plan(before));
-                before = newPlan;
-                // System.out.println("add st");
+                now = now.plusMinutes(realStudyTime);
+                
             }
+
+            now = hw.start;
+
+            // 다음 숙제를 흘끔 쳐다보고 현재 숙제를 얼마나 풀수 있는지 시간 계산을 한다.
+            LocalTime studyTime = (pq.isEmpty() ? LocalTime.of(23,0) : pq.peek().start.minusHours(now.getHour()).minusMinutes(now.getMinute()));
+            // 다음숙제시작시간 - 지금시간 >= 지금숙제 걸리는 시간 : answer에 지금숙제과목 추가
+            if(studyTime.getHour()*60 + studyTime.getMinute() >= hw.left){
+                answer[cnt] = hw.course;
+                cnt ++;
+                now = hw.start.plusMinutes(hw.left);
+            } else {
+                hw.did(studyTime.getHour() *60 + studyTime.getMinute());
+                left.add(hw);
+                now = now.plusHours(studyTime.getHour()).plusMinutes(studyTime.getMinute());
+            }
+            // 다음숙제시작시간 - 지금시간 < 지금숙제 걸리는 시간 : 현재숙제를 얼마나 했는지 업데이트해서 스택에 넣는다.
+
+            // 현재 시간 업데이트
         }
-        lefts.add(before);
-        while(lefts.size() > 0 ){
-            answer[k] = lefts.pop().name;
-            k += 1;
+
+        // stack에 남은 숙제들을 하나 씩 꺼내서 answer에 추가
+        while(!left.isEmpty()){
+            Homework leftHw = left.pop();
+            answer[cnt] = leftHw.course;
+            cnt++;
         }
-        
+
         return answer;
     }
     
-    
-    public static class Plan {
-        String name;
-        int hh;
-        int mm;
+    public static class Homework{
+        String course;
+        LocalTime start;
+        int playtime;
         int left;
-        
-        Plan(String[] p){
-            this.name = p[0];
-            this.hh = Integer.parseInt(p[1].split(":")[0]);
-            this.mm = Integer.parseInt(p[1].split(":")[1]);
-            this.left = Integer.parseInt(p[2]);
+
+        public Homework(String[] plan){
+            this.course = plan[0];
+            this.start = LocalTime.of(Integer.valueOf(plan[1].split(":")[0]), Integer.valueOf(plan[1].split(":")[1]));
+            this.playtime = Integer.valueOf(plan[2]);
+            this.left = this.playtime;
         }
-        Plan(Plan p){
-            this.name = p.name;
-            this.hh = p.hh;
-            this.mm = p.mm;
-            this.left = p.left;
+
+        public void did(int studyTime){
+            this.left -= studyTime;
         }
-        
-        public int[] endTime(){
-            int k = mm + left;
-            int nh = hh + (int)(k / 60);
-            int nm = (k % 60);
-            int[] r = {nh, nm};
-            return r;
+
+        public boolean isDone(){
+            return this.left <= 0;
         }
-        
-        public void updateLeft(int left){
-            this.left = left;
+
+        public int compareTo(Homework h){
+            return this.start.compareTo(h.start);
         }
-        
+
     }
 }
