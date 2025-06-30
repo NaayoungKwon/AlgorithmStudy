@@ -1,10 +1,10 @@
 # [level 1] 공원 산책 - 172928 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/172928?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/172928?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 81.5 MB, 시간: 0.61 ms
+메모리: 65.7 MB, 시간: 31.65 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 21일 14:51:29
+2025년 06월 30일 23:44:06
 
 ### 문제 설명
 
