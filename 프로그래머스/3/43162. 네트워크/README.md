@@ -1,10 +1,10 @@
 # [level 3] 네트워크 - 43162 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43162?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43162?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 81.4 MB, 시간: 0.45 ms
+메모리: 63.6 MB, 시간: 23.13 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 10월 0일 22:6:53
+2025년 07월 01일 22:52:54
 
 ### 문제 설명
 
