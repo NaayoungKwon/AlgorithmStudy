@@ -1,10 +1,10 @@
 # [level 2] 테이블 해시 함수 - 147354 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/147354) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/147354?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 64.3 MB, 시간: 59.96 ms
+메모리: 125 MB, 시간: 50.60 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 14일 17:11:00
+2025년 08월 10일 13:28:02
 
 ### 문제 설명
 
@@ -79,6 +79,8 @@
 <li>S_3 = (1 mod 3) + (5 mod 3) + (10 mod 3) = 4 입니다.</li>
 <li>따라서 해시 값은 S_2 XOR S_ 3 = 4 입니다.</li>
 </ul>
+
+<p>※ 공지 - 2025년 3월 14일 테스트케이스가 추가되었습니다.</p>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
