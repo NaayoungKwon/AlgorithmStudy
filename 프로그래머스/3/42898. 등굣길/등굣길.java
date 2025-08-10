@@ -1,53 +1,35 @@
 import java.util.*;
-
 class Solution {
     public int solution(int m, int n, int[][] puddles) {
-        int[][] dp = new int[m+1][n+1];
-        dp[1][1] = 1;
-        Set<Node> puddleSet = new HashSet<>();
-        for(int i = 0 ; i < puddles.length ; i++){
-          puddleSet.add(new Node(puddles[i][0], puddles[i][1]));
+        int answer = 0;
+        int[][] dp = new int[n+1][m+1];
+        int[][] map_ = new int[n+1][m+1];
+        for(int[] puddle : puddles){
+            map_[puddle[1]][puddle[0]] = -1; // 물웅덩이
+        }
+
+        for(int i = 1 ; i <= n ; i++){
+            if(map_[i][1] != -1){
+                dp[i][1] = 1;
+            } else {
+                break;
+            }
         }
         for(int i = 1 ; i <= m ; i++){
-          for(int j = 1 ; j <= n ; j++){
-            if(i == 1 && j == 1){
-              continue;
-            }
-            if(puddleSet.contains(new Node(i, j))){
-              dp[i][j] = 0;
+            if(map_[1][i] != -1){
+                dp[1][i] = 1;
             } else {
-              dp[i][j] = (dp[i-1][j] + dp[i][j-1]) % 1000000007;
+                break;
             }
-          }
         }
-        return dp[m][n];
-    }
-    
-    public static class Node{
-    int x;
-    int y;
+        for(int i = 2 ; i <= n ; i++){
+            for(int j = 2 ; j <= m ; j++){
+                int top = map_[i-1][j] == -1 ? 0 : dp[i-1][j];
+                int left = map_[i][j-1] == -1 ? 0 : dp[i][j-1];
+                dp[i][j] = (map_[i][j] == -1 ? 0 : top + left) % 1_000_000_007;
+            }
 
-    public Node(int x, int y){
-      this.x = x;
-      this.y = y;
+        }
+        return dp[n][m];
     }
-
-    public int getX() {
-      return x;
-    }
-
-    @Override
-    public boolean equals(Object o){
-      if(o instanceof Node){
-        Node node = (Node) o;
-        return this.x == node.x && this.y == node.y;
-      }
-      return false;
-    }
-
-    @Override
-    public int hashCode(){
-      return x * 1000 + y;
-    }
-  }
 }
