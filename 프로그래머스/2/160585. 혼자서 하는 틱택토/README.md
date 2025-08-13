@@ -1,10 +1,10 @@
 # [level 2] 혼자서 하는 틱택토 - 160585 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/160585) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/160585?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 72 MB, 시간: 10.61 ms
+메모리: 63 MB, 시간: 9.25 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 03월 03일 14:28:37
+2025년 08월 13일 22:55:29
 
 ### 문제 설명
 
