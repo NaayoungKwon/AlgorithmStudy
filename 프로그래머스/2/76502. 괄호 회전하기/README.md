@@ -1,10 +1,10 @@
 # [level 2] 괄호 회전하기 - 76502 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/76502) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/76502?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 95.5 MB, 시간: 64.69 ms
+메모리: 68.1 MB, 시간: 82.12 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 03월 11일 21:41:51
+2025년 08월 16일 17:07:42
 
 ### 문제 설명
 
