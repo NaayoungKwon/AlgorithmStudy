@@ -1,89 +1,68 @@
 import java.time.LocalTime;
+import java.time.Duration;
 import java.util.*;
-
 
 class Solution {
     public String solution(String m, String[] musicinfos) {
         String answer = "";
-        int max_time = 0;
-        String max_title = "(None)";
-
-        String[] listened = m.split("(?=[A-Z]#?)");
-        for(String musicInfo : musicinfos) {
-            String[] split1 = musicInfo.split(",");
-            Music music = new Music(LocalTime.of(Integer.parseInt(split1[0].split(":")[0]),
-                Integer.parseInt(split1[0].split(":")[1])),
-                LocalTime.of(Integer.parseInt(split1[1].split(":")[0]),
-                    Integer.parseInt(split1[1].split(":")[1])),
-                split1[2], split1[3]);
-
-            List<String> melody = music.getMelody();
-           // System.out.println(melody);
-
-            // int j = 0, mlen = listened.length;
-            boolean flag = false;
-            for(int i = 0 ; i < melody.size() ; i++){
-                if(flag){
-                    break;
-                }
-                List<String> newMelody = melody.subList(i, melody.size());
-                int j = 0, mlen = listened.length;
-                for(String s : newMelody){
-                    if(s.equals(listened[j])){
-                        j++;
-
-                        if(j == mlen){
-                            int duration = music.getDuration();
-                            if(duration > max_time){
-                                max_time = duration;
-                                max_title = music.title;
-                            }
-                            break;
-                        }
-                    } else {
-                        j = 0;
-                    }
-   
-                }
+        String[] nm = m.split("(?=[A-Z]#?)");
+        PriorityQueue<Music> pq = new PriorityQueue<>(Music::compareTo);
+        for(int i = 0 ; i < musicinfos.length ; i++){
+            Music music = new Music(i, musicinfos[i]);
+            if(music.contains(m, nm) ){
+                pq.add(music);
             }
         }
 
-        return max_title;
+        if(pq.isEmpty()){
+            return "(None)";
+        }
+        return pq.poll().name;
     }
-
+    
     public static class Music{
-        LocalTime start;
-        LocalTime end;
-        String title;
-        String[] music;
-        int time;
+        int index;
+        int playTime;
+        LocalTime startTime;
+        String name;
+        String[] melody;
 
-        public Music(LocalTime start, LocalTime end, String title, String music) {
-            this.start = start;
-            this.end = end;
-            this.title = title;
-            this.music = music.split("(?=[A-Z]#?)");
-            this.time = this.music.length;
-        }
-
-        public int getDuration() {
-            return (int) (end.toSecondOfDay() - start.toSecondOfDay())/60;
-        }
-
-        public List<String> getMelody() {
-            int duration = getDuration();
-            int n = 0;
-            if(duration < this.time){
-                n = duration;
-            } else {
-                n = (int) (Math.ceil((double) getDuration()/this.time) * this.time);;
+        Music(int index,String full){
+            this.index = index;
+            String[] split = full.split(",");
+            this.startTime = LocalTime.parse(split[0]);
+            LocalTime endTime = LocalTime.parse(split[1]);
+            this.playTime = (int) (endTime.toSecondOfDay() - startTime.toSecondOfDay())/60;       
+            this.name = split[2];
+            this.melody = new String[playTime];
+            String[] temp = split[3].split("(?=[A-Z]#?)");
+            for(int i = 0; i < playTime; i++){
+                int ii = (i + temp.length) % temp.length;
+                this.melody[i] = temp[ii];
             }
-
-            List<String > sb = new ArrayList<>();
-            for(int i = 0 ; i < n ; i++){
-                sb.add(this.music[(i%this.time)]);
-            }
-            return sb;
         }
+
+        public int compareTo(Music other) {
+            if(this.playTime == other.playTime) {
+                return this.index - other.index;
+            }
+            return -(this.playTime - other.playTime);
+        }
+
+        public boolean contains(String m, String[] nm){
+            for(int i = 0 ; i <= this.melody.length - nm.length; i++){
+                if(this.melody[i].equals(nm[0])){
+                    StringBuilder sb = new StringBuilder();
+                    for(int j = i ; j < i +  nm.length ; j++){
+                        sb.append(this.melody[j]);
+                    }
+                    if(m.equals(sb.toString())){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
     }
 }
