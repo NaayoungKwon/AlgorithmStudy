@@ -1,46 +1,38 @@
 import java.util.*;
+
 class Solution {
     public int solution(int[][] routes) {
-        int answer = 0;
-        PriorityQueue<Route> routeQue = new PriorityQueue<>(Route::compareTo);
-
+        int answer = 1;
         int n = routes.length;
-        for(int[] route : routes){
-            routeQue.add(new Route(route[0], route[1]));
+        PriorityQueue<Route> pq = new PriorityQueue<Route>(Route::compareTo);
+        for(int i = 0 ; i < n ; i++){
+            pq.add(new Route(routes[i][0], routes[i][1]));
         }
-
-        answer += 1;
-        int prevEndPoint = routeQue.poll().end;
-        while(!routeQue.isEmpty()){
-            Route route = routeQue.poll();
-            if(route.isOutOfRange(prevEndPoint)){
-                answer += 1;
-                prevEndPoint = route.end;
+        int end = pq.poll().end;
+        while (!pq.isEmpty()) {
+            Route route = pq.poll();
+            if(end < route.start){
+                answer++;
+                end = route.end;
             }
         }
-
-        
         return answer;
     }
-
+    
     public static class Route{
         int start;
         int end;
 
-        public Route(int start, int end){
+        Route(int start, int end) {
             this.start = start;
             this.end = end;
         }
 
-        public boolean isOutOfRange(int point){
-            return !(this.start <= point && point <= this.end);
-        }
-
-        public int compareTo(Route route){
-            if(this.end != route.end){
-                return this.end - route.end;
+        public int compareTo(Route other){
+            if(this.end == other.end) {
+                return -(this.start - other.start);
             }
-            return this.start - route.start;
+            return this.end - other.end;
         }
     }
 }
