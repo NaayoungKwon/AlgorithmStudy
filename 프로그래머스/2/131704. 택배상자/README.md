@@ -1,10 +1,10 @@
 # [level 2] 택배상자 - 131704 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131704) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131704?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 194 MB, 시간: 238.52 ms
+메모리: 195 MB, 시간: 1663.71 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 03월 20일 20:00:09
+2025년 08월 28일 18:49:39
 
 ### 문제 설명
 
