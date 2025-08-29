@@ -1,47 +1,52 @@
 import java.util.*;
 class Solution {
     public int solution(String arr[]) {
-        int n = arr.length/2 + 1;
-        int[][][] dp = new int[n+1][n+1][2];
+        int answer = -1;
+        int n = arr.length;
+        int[][] dp = new int[n][n];
+        int[][] dp2 = new int[n][n];
+        for(int i = 0 ; i < n ; i++){
+            Arrays.fill(dp[i], Integer.MIN_VALUE);
+            Arrays.fill(dp2[i], Integer.MAX_VALUE);
+        }
+        
 
-        for (int i = 0; i < n; i++) {
-            dp[i][i][0] = Integer.valueOf(arr[i*2]);
-            dp[i][i][1] = Integer.valueOf(arr[i*2]);
+        // 자기 자신들은 초기화
+        for(int i = 0 ; i < n ; i += 2){
+            dp[i][i] = Integer.valueOf(arr[i]);
+            dp2[i][i] = Integer.valueOf(arr[i]);
         }
 
-        for(int k = 1 ; k < n ; k++){
-            for (int i = 0; i + k < n; i++) {
-                int a = i + k;
-                int maxM = Integer.MIN_VALUE;
-                int minM = Integer.MAX_VALUE;
-
-                for(int b = i ; b < a ; b++){
-                    int left = dp[i][b][0];
-                    int left2 = dp[i][b][1];
-                    int right = dp[b+1][a][0];
-                    int right2 = dp[b+1][a][1];
-
-                    maxM = Math.max(maxM,  arr[1+ 2*b].equals("-") ? left - right : left + right);
-                    minM = Math.min(minM,  arr[1+ 2*b].equals("-") ? left - right : left + right);
-
-                    maxM = Math.max(maxM,  arr[1+ 2*b].equals("-") ? left2 - right : left2 + right);
-                    minM = Math.min(minM,  arr[1+ 2*b].equals("-") ? left2 - right : left2 + right);
-
-                    maxM = Math.max(maxM,  arr[1+ 2*b].equals("-") ? left - right2 : left + right2);
-                    minM = Math.min(minM,  arr[1+ 2*b].equals("-") ? left - right2 : left + right2);
-
-                    maxM = Math.max(maxM,  arr[1+ 2*b].equals("-") ? left2 - right2 : left2 + right2);
-                    minM = Math.min(minM,  arr[1+ 2*b].equals("-") ? left2 - right2 : left2 + right2);
-
+        // 두개를 비교하는 것 부터, 전체를 다 비교하는 것까지 진행한다.
+        for(int len = 2; len <= n ; len++){
+            // 오른쪽 대각선으로 움직이자
+            for(int start = 0; start + (len-1)*2 < n; start +=2){
+                int end = start + (len-1)*2;
+                for(int mid = start; mid+2 <= end; mid += 2){
+                    // System.out.println("dp[" + start + "][" + end + "] = max(dp[" + start + "][" + mid + "]_" + dp[start][mid] + ", dp[" + (mid+2) + "][" + end + "]_" +dp[mid+2][end] + ", " + arr[mid+1] + ")");
+                    dp[start][end] = Math.max(dp[start][end], operateMax(dp2[start][mid], dp2[mid+2][end],dp[start][mid], dp[mid+2][end], arr[mid+1]));
+                    dp2[start][end] = Math.min(dp2[start][end], operateMin(dp2[start][mid], dp2[mid+2][end], dp[start][mid], dp[mid+2][end], arr[mid+1]));
                 }
-                dp[i][a][0] = minM;
-                dp[i][a][1] = maxM;
-
+                // System.out.println("dp[" + start + "][" + end + "] = " + dp[start][end]);
             }
+
         }
-
-
-
-        return dp[0][n-1][1];
+        return Math.max(dp[0][n-1], dp2[0][n-1]);
+    }
+    
+    public int operateMin(int maxA, int maxB, int minA, int minB, String op){
+        if(op.equals("+")){
+            
+            return Math.min(maxA, minA)+ Math.min(maxB, minB);
+        }
+        
+        return Math.min(maxA, minA) - Math.max(maxB, minB);
+    }
+    
+    public int operateMax(int maxA, int maxB, int minA, int minB, String op){
+        if(op.equals("+")){
+            return Math.max(maxA, minA) + Math.max(maxB, minB);
+        }
+        return Math.max(maxA, minA) - Math.min(maxB, minB);
     }
 }
