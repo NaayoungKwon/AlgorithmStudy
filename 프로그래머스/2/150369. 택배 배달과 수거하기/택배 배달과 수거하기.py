@@ -1,18 +1,39 @@
 def solution(cap, n, deliveries, pickups):
     answer = 0
-    s_deliver = cap
-    s_pickup = cap
-    last = n
-    for i in range(n-1, -1, -1):
-        # 지금 완전 빈 상태면 last 갱신
-        if s_deliver >= cap and s_pickup >= cap:
-            last = i+1
-        # print(i, answer, last, s_deliver, s_pickup )
-        s_deliver -= deliveries[i]
-        s_pickup -= pickups[i]
+    i = moveLeftToNonZero(n-1, deliveries)
+    j = moveLeftToNonZero(n-1, pickups)
+
+    while i >= 0 or j >= 0:
+        dcap = cap
+        pcap = cap
+        next_i = i
+        next_j = j
+        answer += (max(i,j)+1) * 2
         
-        while s_deliver < cap or s_pickup < cap:
-            answer += (i+1)
-            s_deliver += cap
-            s_pickup += cap
-    return answer * 2
+        for a in range(i, -1,-1):
+            next_i = a
+            if dcap >= deliveries[a]:
+                dcap -= deliveries[a]
+                deliveries[a] = 0
+            else:
+                deliveries[a] -= dcap
+                break
+
+        for a in range(j, -1,-1):
+            next_j = a
+            if pcap >= pickups[a]:
+                pcap -= pickups[a]
+                pickups[a] = 0
+            else:
+                pickups[a] -= pcap
+                break
+        # print(next_i, next_j, answer)
+        i = moveLeftToNonZero(next_i, deliveries)
+        j = moveLeftToNonZero(next_j,  pickups)
+        
+    return answer
+
+def moveLeftToNonZero(last, arr):
+    i = last
+    while i >= 0 and arr[i] == 0: i-= 1
+    return i
