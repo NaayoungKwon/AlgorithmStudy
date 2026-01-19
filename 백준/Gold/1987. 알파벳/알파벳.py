@@ -1,30 +1,26 @@
 import sys
 # import heapq
 
-def solution(n, m, arr):
-    set_list = set()
+max_count = 1
+visited = [False] * 26
+def dfs(x, y, count, arr, n, m):
     dirs = [(0,1),(1,0),(0,-1),(-1,0)]
-    st = [(0,0,set(arr[0][0]))]
-    
-    ts = set()
-    for i in range(n):
-        for j in range(m):
-            ts.add(arr[i][j])
-    all_count = len(ts)
-    max_count = 1
-    while st:
-        x, y, alpha = st.pop()
-        for dx, dy in dirs:
-            nx, ny = x + dx, y + dy
-            if not (0 <= nx < R and 0 <= ny < C):
-                continue
-            if arr[nx][ny] in alpha:
-                continue
-            nalpha = alpha | set(arr[nx][ny])
-            max_count = max(max_count, len(nalpha))
-            st.append((nx, ny, nalpha))
-            if len(nalpha) == all_count:
-                return all_count
+    global max_count
+    max_count= max(max_count, count)
+    for dx, dy in dirs:
+        nx, ny = x + dx, y + dy
+        if not (0 <= nx < n and 0 <= ny < m):
+            continue
+        if visited[ord(arr[nx][ny]) - ord('A')]:
+            continue
+        visited[ord(arr[nx][ny]) - ord('A')] = True
+        dfs(nx, ny, count + 1, arr, n, m)
+        # print(nx, ny, arr[nx][ny], visited)
+        visited[ord(arr[nx][ny]) - ord('A')] = False
+
+def solution(n, m, arr):
+    visited[ord(arr[0][0]) - ord('A')] = True
+    dfs(0, 0, 1, arr, n, m)
     return max_count
 
 
