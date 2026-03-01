@@ -1,16 +1,28 @@
 import sys
 
-def solution(s, p):
+MAX_VALUE = (1 << 20) - 1
 
-    cnt = 1
-    idx = 0
-    for i in range(len(p)):
-        if s.find(p[idx : i+1]) >= 0: # p안에 s의 부분집합이 있다
-            continue
-        cnt += 1
-        idx = i
-    return cnt
+
+def solution(S, P):
+    count = 0
+    start_idx = 0
+    l = 1
+    while start_idx + l <= len(P):
+        if S.find(P[start_idx: start_idx+l]) == -1:
+            count += 1
+            # print(P[start_idx: start_idx+l-1])
+            start_idx += l-1
+            l = 1
+        elif start_idx + l == len(P):
+            l += 1
+            count += 1
+        else:
+            l += 1
+
+    return count
+
+
 
 s = input()
 p = input()
-print(solution(s, p));
+print(solution(s, p))
